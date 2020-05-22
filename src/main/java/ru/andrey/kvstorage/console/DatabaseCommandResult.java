@@ -18,12 +18,12 @@ public interface DatabaseCommandResult {
 
     static class DefaultDatabaseCommandResult implements DatabaseCommandResult {
 
-        private final Optional<String> result;
+        private final String result;
         private String errorMessage;
         private final DatabaseCommandStatus status;
 
         private DefaultDatabaseCommandResult(String result, DatabaseCommandStatus status) {
-            this.result = Optional.ofNullable(result);
+            this.result = result;
             this.status = status;
         }
 
@@ -34,7 +34,7 @@ public interface DatabaseCommandResult {
 
         @Override
         public Optional<String> getResult() {
-            return result;
+            return Optional.ofNullable(result);
         }
 
         @Override
