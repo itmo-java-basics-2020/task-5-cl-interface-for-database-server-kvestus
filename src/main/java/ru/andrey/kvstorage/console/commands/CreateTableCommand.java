@@ -7,12 +7,12 @@ import ru.andrey.kvstorage.exception.DatabaseException;
 
 import static ru.andrey.kvstorage.console.DatabaseCommandResult.DefaultDatabaseCommandResult;
 
-public class CreateTable implements DatabaseCommand {
+public class CreateTableCommand implements DatabaseCommand {
     private final ExecutionEnvironment env;
     private final String databaseName;
     private final String tableName;
 
-    public CreateTable(ExecutionEnvironment env, String databaseName, String tableName) {
+    public CreateTableCommand(ExecutionEnvironment env, String databaseName, String tableName) {
         this.env = env;
         this.databaseName = databaseName;
         this.tableName = tableName;

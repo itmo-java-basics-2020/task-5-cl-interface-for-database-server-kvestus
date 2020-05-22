@@ -7,13 +7,13 @@ import ru.andrey.kvstorage.exception.DatabaseException;
 
 import static ru.andrey.kvstorage.console.DatabaseCommandResult.DefaultDatabaseCommandResult;
 
-public class ReadKey implements DatabaseCommand {
+public class ReadKeyCommand implements DatabaseCommand {
     private final ExecutionEnvironment env;
     private final String databaseName;
     private final String tableName;
     private final String key;
 
-    public ReadKey(ExecutionEnvironment env,
+    public ReadKeyCommand(ExecutionEnvironment env,
                    String databaseName,
                    String tableName,
                    String key) {

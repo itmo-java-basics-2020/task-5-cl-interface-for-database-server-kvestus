@@ -7,7 +7,7 @@ import ru.andrey.kvstorage.exception.DatabaseException;
 
 import static ru.andrey.kvstorage.console.DatabaseCommandResult.DefaultDatabaseCommandResult;
 
-public class UpdateKey implements DatabaseCommand {
+public class UpdateKeyCommand implements DatabaseCommand {
 
     private final ExecutionEnvironment env;
     private final String databaseName;
@@ -15,7 +15,7 @@ public class UpdateKey implements DatabaseCommand {
     private final String key;
     private final String value;
 
-    public UpdateKey(ExecutionEnvironment env,
+    public UpdateKeyCommand(ExecutionEnvironment env,
                      String databaseName,
                      String tableName,
                      String key,

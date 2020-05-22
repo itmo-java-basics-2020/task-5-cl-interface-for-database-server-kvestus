@@ -1,9 +1,9 @@
 package ru.andrey.kvstorage.console;
 
-import ru.andrey.kvstorage.console.commands.CreateDatabase;
-import ru.andrey.kvstorage.console.commands.CreateTable;
-import ru.andrey.kvstorage.console.commands.ReadKey;
-import ru.andrey.kvstorage.console.commands.UpdateKey;
+import ru.andrey.kvstorage.console.commands.CreateDatabaseCommand;
+import ru.andrey.kvstorage.console.commands.CreateTableCommand;
+import ru.andrey.kvstorage.console.commands.ReadKeyCommand;
+import ru.andrey.kvstorage.console.commands.UpdateKeyCommand;
 import ru.andrey.kvstorage.exception.DatabaseException;
 import ru.andrey.kvstorage.logic.DefaultDatabase;
 
@@ -14,7 +14,7 @@ public enum DatabaseCommands {
             if (args.length != 1) {
                 throw new DatabaseException("Wrong amount of arguments");
             }
-            return new CreateDatabase(env, args[0], new DefaultDatabase());
+            return new CreateDatabaseCommand(env, args[0], new DefaultDatabase());
         }
     },
     CREATE_TABLE {
@@ -23,7 +23,7 @@ public enum DatabaseCommands {
             if (args.length != 2) {
                 throw new DatabaseException("Wrong amount of arguments");
             }
-            return new CreateTable(env, args[0], args[1]);
+            return new CreateTableCommand(env, args[0], args[1]);
         }
     },
     UPDATE_KEY {
@@ -32,7 +32,7 @@ public enum DatabaseCommands {
             if (args.length != 4) {
                 throw new DatabaseException("Wrong amount of arguments");
             }
-            return new UpdateKey(env, args[0], args[1], args[2], args[3]);
+            return new UpdateKeyCommand(env, args[0], args[1], args[2], args[3]);
         }
     },
     READ_KEY {
@@ -41,7 +41,7 @@ public enum DatabaseCommands {
             if (args.length != 3) {
                 throw new DatabaseException("Wrong amount of arguments");
             }
-            return new ReadKey(env, args[0], args[1], args[2]);
+            return new ReadKeyCommand(env, args[0], args[1], args[2]);
         }
     };
 

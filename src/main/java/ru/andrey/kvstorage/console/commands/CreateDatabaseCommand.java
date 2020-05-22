@@ -7,12 +7,12 @@ import ru.andrey.kvstorage.logic.Database;
 
 import static ru.andrey.kvstorage.console.DatabaseCommandResult.DefaultDatabaseCommandResult;
 
-public class CreateDatabase implements DatabaseCommand {
+public class CreateDatabaseCommand implements DatabaseCommand {
     private final ExecutionEnvironment env;
     private final String databaseName;
     private final Database database;
 
-    public CreateDatabase(ExecutionEnvironment env, String databaseName, Database database) {
+    public CreateDatabaseCommand(ExecutionEnvironment env, String databaseName, Database database) {
         this.env = env;
         this.databaseName = databaseName;
         this.database = database;
